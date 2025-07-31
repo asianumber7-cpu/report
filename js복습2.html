@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //for 문
+        const name=['rm','뷔','정국']
+        for(let i=0; i<name.length;i++){
+            console.log(name[i])
+        }
+        //map()함수 : for문 보다 간단하게 루프 돌릴 수 있다.
+        const name2=name.map((a)=>{//(3) ['rm', '뷔', '정국']
+            return a;
+        })
+        console.log(name2);
+        name.map((a)=>console.log(a))
+
+        //원소를 하나씩 출력
+        name.map((a)=>console.log(a))
+        //filter()함수 :조건에 일치하는 값만 배열로 부터 추출
+        const num=[1,2,3,4,5];
+        const odd=num.filter((i)=>{
+            return i%2==1
+        })//홀수만 반환 받기
+        console.log(odd)
+
+        //콜백 : 비동기(setTimeout):
+        function on(callback){
+            callback('ee');
+        }
+        function hi(){
+            console.log('hi')
+        }
+        on(hi)
+
+        //배열 메소드 : 반복 하면서 원하는 처리 실행
+        const pro=['길동','탐','정국','뷔'];
+        const pro2=pro.map((i)=>{
+            if(i === "탐"){
+                return i;
+            }
+            else{
+                return `${i}님`
+            }
+        })
+        //콘솔로 함수호출하면서 출력
+        console.log(pro2);
+
+        const num2=[5,5,'5',5,'5'];
+        //map함수랑 정수 5랑 값이랑 타입이 같은지 확인
+        //같으면 5에서 10증가
+        //다르면 "숫자가 아님" 출력
+        const num3=num2.map((i)=>{
+            if(i===5){
+               return i+10;
+            }
+            else{
+               return '숫자가아님'
+            }
+        })
+        console.log(num3);
+        
+        
+
+
+    </script>
+    
+</body>
+</html>
