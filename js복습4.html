@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">hello javaScript</h1>
+    <div class="con1">
+        <p>영역1</p>
+    </div>
+    <script>
+        const hello=document.getElementById('title');
+        hello.style.color='red';
+        //hello.style='color:red';
+
+        const btn1=document.createElement("button");
+        //버튼을 con1 div영역에 자식으로 추가
+        const div1=document.querySelector(".con1");
+        //버튼 이름=> "첫번째 버튼"(textContent)
+        btn1.textContent='첫번째 버튼';
+        div1.appendChild(btn1);
+
+
+
+    </script>
+    
+</body>
+</html>
