@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //1)분할 대입 안했을 경우
+        const profile={
+            name:'tom',
+            age:30
+        };
+        const msg=`내이름은 ${profile.name}이고 나이는 ${profile.age}입니다`
+        console.log(msg);
+        //2)분할 대입=구조 분해 할당 할 경우
+        const profile2={
+            name2:'min',
+            age2:20,
+            adr2:"seoul"
+        };
+        //분할 대입 구조 (코드간결//가독성 업//필요한 값만 뽑아낼 수 있음)
+        //const {속성명,...} = 객체명
+        const {name2 ,age2} = profile2;
+        console.log(`내이름${name2}나이는 ${age2}`)    
+
+        const msg2=`내이름은 ${name2}이고 나이는 ${age2}입니다`
+        console.log(msg2);
+        //adr2 만 추출해서 adr2만 출력
+        const {adr2} = profile2;
+        console.log(adr2);
+
+        const profile3={
+            name:'RM',
+            age:43
+        }
+        //속성에 :으로 alias 설정
+        const {name:proName, age:proAge} = profile3;
+        const msg3=`내이름은 ${proName}이고 나이는 ${proAge}입니다`;
+        console.log(msg3);
+
+        //배열- 분할 대입
+        const ary=['gildong',34];
+        const msg4=`내이름은 ${ary[0]}이고 나이는 ${ary[1]}입니다`;
+        console.log(msg4);
+        
+        const [name,age]=ary;
+        const msg5=`내이름은 ${name}이고 나이는 ${age}입니다`;
+        console.log(msg5);
+
+         const [age22]=ary;
+         console.log(age22); //gildong 출력 인덱스 이기때문에 순서로
+
+
+
+
+        function fun1(val){//일반식
+            return val;
+        }
+        const fun2=function(val){//변수식
+            return val;
+        }
+        const fun3=(val)=>{//화살표식
+            return val;
+        }
+         const fun4=val=>{//화살표식 매개변수 하나일때는 ()생략가능
+            return val;
+        }
+         const fun5=(val,val2)=>{//화살표식
+            return val+val2;
+        }
+          const fun6=(val1,val2)=> val1+val2;
+          console.log(fun6(10,20));
+
+          const fun7=(val1,val2)=>(
+            {
+                name:val1,
+                age:val2
+            })
+            console.log(fun7("asd",20));
+        
+
+        // let n='let 변수'
+        // console.log(n)
+
+        // n='let 변수 다시 수정'
+        // console.log(n)  //let변수의 특징 덮어쓰기 가능
+
+        //  const a='let 변수'
+        // console.log(a)
+
+        // // a='let 변수 다시 수정'
+        // // console.log(a)  //재선언 불가 덮어쓰기 안됨
+        // // //const가 기본타입은 -덮어쓰기 불가능하지만
+        // //객체 타입은 덮어쓰기 가능    
+
+        // //json:javascript object natation(자바스크립트 객체 표기법)
+        // const aa={
+        //     name:"gildong",
+        //     age:30
+        // }
+        // console.log(aa)
+
+        // aa.name="donggil";
+        // console.log(aa);
+
+        // const ary1=['a','b','c'];
+        // ary1[0]='d';
+        // console.log(ary1);
+
+        // ary1.push('e');
+        // console.log(ary1);
+
+        // const numbers = [1, 2, 3];
+
+        // // 내부 값 수정 (가능)
+        // numbers.push(4);
+        // numbers[0] = 99;
+
+        // console.log(numbers);  
+        // // 출력: [99, 2, 3, 4]
+
+        // const name1='tom';
+        // const age=30
+
+        // const msg=`내이름 은${name1}이고 , 나이는 ${age}살 입니다.`
+        // console.log(msg);
+
+        // function hi(){
+        //     return "hi"
+        // }
+        // const msg2=`인사해줘 ${hi()}! 나이 ${age+1}`;//백틱안에서 연산도 함수호출도 가능
+        // console.log(msg2);
+
+    </script>
+</body>
+</html>
